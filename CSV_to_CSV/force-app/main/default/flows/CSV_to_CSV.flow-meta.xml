@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Convert_CSV_File_to_Records</name>
+        <label>Convert CSV File to Records</label>
+        <locationX>176</locationX>
+        <locationY>224</locationY>
+        <actionName>ConvertCSVToRecords</actionName>
+        <actionType>apex</actionType>
+        <dataTypeMappings>
+            <typeName>U__convertedCSVRows</typeName>
+            <typeValue>Account</typeValue>
+        </dataTypeMappings>
+        <inputParameters>
+            <name>objectApiName</name>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <interviewLabel>CSV_to_CSV {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CSV_to_CSV</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Select_Data</name>
+        <label>Select Data</label>
+        <locationX>342</locationX>
+        <locationY>227</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Convert_CSV_File_to_Records</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>
