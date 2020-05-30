@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="displayText" type="String" label="Text above upload button" role="inputOnly"/>
+            <property name="linkedRecordString" type="String" label="RecordId (String) to link document to" role="inputOnly"/>
+            <property name="linkedRecordCollection" type="String[]" label="Records (String Collection) to link document to" role="inputOnly"/>
+            <property name="fileShareType" type="String" label="Share Type" role="inputOnly"/>
+            <property name="fileVisibility" type="String" label="File Visibility" role="inputOnly"/>
+
+            <property name="contentDocumentId" type="String" label="Content Document Id" role="outputOnly"/>
+            <property name="contentVersionId" type="String" label="Content Version Id" role="outputOnly"/>
+            <property name="contentDocumentLinkIds" type="String[]" label="Content Docment Link Ids" role="outputOnly"/>
+            <property name="contentDocumentLinks" type="@salesforce/schema/ContentDocumentLink[]" label="Content Document Links" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

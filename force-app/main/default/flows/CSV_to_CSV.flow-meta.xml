@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Change_Fields</name>
+        <label>Change Fields</label>
+        <locationX>481</locationX>
+        <locationY>229</locationY>
+        <actionName>MapCollection</actionName>
+        <actionType>apex</actionType>
+        <dataTypeMappings>
+            <typeName>T__inputCollection</typeName>
+            <typeValue>Account</typeValue>
+        </dataTypeMappings>
+        <dataTypeMappings>
+            <typeName>U__outputCollection</typeName>
+            <typeValue>Account</typeValue>
+        </dataTypeMappings>
+        <inputParameters>
+            <name>inputCollection</name>
+            <value>
+                <elementReference>Convert_CSV_File_to_Records.convertedCSVRows</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>keyValuePairs</name>
+            <value>
+                <stringValue>{&quot;foo&quot;:&quot;bar&quot;}</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
         <name>Convert_CSV_File_to_Records</name>
         <label>Convert CSV File to Records</label>
         <locationX>176</locationX>
@@ -15,6 +44,31 @@
             <name>objectApiName</name>
             <value>
                 <stringValue>Account</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Convert_Records_to_CSV</name>
+        <label>Convert Records to CSV</label>
+        <locationX>611</locationX>
+        <locationY>226</locationY>
+        <actionName>ConvertRecordsToCSVQueueable</actionName>
+        <actionType>apex</actionType>
+        <dataTypeMappings>
+            <typeName>T__recordCollection</typeName>
+            <typeValue>Account</typeValue>
+        </dataTypeMappings>
+        <inputParameters>
+            <name>documentTitle</name>
+            <value>
+                <stringValue>foobar</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordCollection</name>
+            <value>
+                <elementReference>Change_Fields.outputCollection</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
