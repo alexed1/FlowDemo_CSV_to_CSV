@@ -93,8 +93,8 @@
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
     </formulas>
-    <interviewLabel>CSV_to_CSV {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>CSV_to_CSV</label>
+    <interviewLabel>CSV - Adam version to test {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CSV - Adam version to test</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -192,6 +192,37 @@
         <connector>
             <targetReference>Select_Data</targetReference>
         </connector>
+        <fields>
+            <name>fileUploadSC</name>
+            <extensionName>c:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>displayText</name>
+                <value>
+                    <stringValue>Select CSV File</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>linkedRecordString</name>
+                <value>
+                    <elementReference>curUserId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fileShareType</name>
+                <value>
+                    <stringValue>I</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fileVisibility</name>
+                <value>
+                    <stringValue>AllUsers</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
         <fields>
             <name>ootbUpload</name>
             <extensionName>forceContent:fileUpload</extensionName>
